@@ -3,11 +3,13 @@ import Header from './components/Header';
 import Formulario from './components/Formulario';
 import './App.css';
 
+import  CategoriasProvider from './contexts/categoriasContext';
+
 function App() {
 
   return (
 
-    <Fragment>
+    <CategoriasProvider>
 
       <Header/>
 
@@ -16,7 +18,9 @@ function App() {
           <Formulario/>
         </div>
       </div>
-    </Fragment>
+
+    </CategoriasProvider>
+
   );
 }
 
