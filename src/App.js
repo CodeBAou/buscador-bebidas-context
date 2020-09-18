@@ -1,9 +1,8 @@
 import React,{Fragment} from 'react';
+import  CategoriasProvider from './contexts/categoriasContext';
 import Header from './components/Header';
 import Formulario from './components/Formulario';
 import './App.css';
-
-import  CategoriasProvider from './contexts/categoriasContext';
 
 function App() {
 
@@ -18,9 +17,7 @@ function App() {
           <Formulario/>
         </div>
       </div>
-
     </CategoriasProvider>
-
   );
 }
 
