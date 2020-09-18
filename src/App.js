@@ -17,6 +17,7 @@ function App() {
           <Formulario/>
         </div>
       </div>
+      
     </CategoriasProvider>
   );
 }
