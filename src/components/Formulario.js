@@ -2,6 +2,7 @@ import React,{useContext,useState} from 'react';
 import {CategoriasContext} from '../contexts/categoriasContext';
 import {RecetasContext} from '../contexts/RecetasContext';
 
+
 const Formulario = () => {
 
     

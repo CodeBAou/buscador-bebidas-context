@@ -1,5 +1,6 @@
 import React, {createContext,useState,useEffect} from 'react';
 import Axios from 'axios';
+
 export const RecetasContext = createContext();
 
 const RecetasProvider = (props) => {
@@ -32,7 +33,8 @@ const RecetasProvider = (props) => {
         <RecetasContext.Provider
             value={{
                 buscarRecetas,
-                guardarConsultar
+                guardarConsultar,
+                recetas
             }}
         >
             {props.children}
