@@ -28,7 +28,7 @@ const Formulario = () => {
             className="col-12 text-center"
             onSubmit={e=>{
                 e.preventDefault();
-                if( busqueda.nombre!='' || typeof(busqueda.nombre) == 'string' && busqueda.categoria != '' || typeof(busqueda.categoria) == 'string'){
+                if( busqueda.nombre!='' && busqueda.nombre != null ){
                     buscarRecetas(busqueda);
                     guardarConsultar(true);
                 }
@@ -39,6 +39,7 @@ const Formulario = () => {
             </fieldset>
 
             <div className="row mt-4">
+
                 <div className="col-md-4">
                     <input 
                         name="nombre"
@@ -78,6 +79,7 @@ const Formulario = () => {
                         value="Buscar Recetas"
                     />
                 </div>
+
             </div>
         </form>
 
