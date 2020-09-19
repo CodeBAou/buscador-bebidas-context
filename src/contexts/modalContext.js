@@ -1,5 +1,7 @@
 import React,{useEffect,useState, createContext} from 'react';
 import Axios from 'axios';
+import Modal from '@material-ui/core/Modal';
+import { makeStyles } from '@material-ui/core/styles';
 
 //crear el context
 export const ModalContext=createContext();
@@ -8,8 +10,8 @@ const ModalProvider = (props) => {
 
     //state del provider
     const [idreceta,guardarIdReceta]=useState(null);
-    const [receta,guardarReceta]=useState({});
-    
+    const [recetaData,guardarReceta]=useState({});
+
     //LLamada a la api, cuando tengamos la receta
     useEffect(()=>{
 
@@ -18,8 +20,8 @@ const ModalProvider = (props) => {
             if(!idreceta) return;
             const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idreceta}`;
             const resultado=await Axios.get(url);
-            console.log(resultado);
-
+            guardarReceta(resultado.data.drinks[0]);
+            console.log(recetaData);
         }
 
         obtenerReceta();
@@ -30,7 +32,9 @@ const ModalProvider = (props) => {
 
         <ModalContext.Provider
             value={{
-                guardarIdReceta
+                recetaData,
+                guardarIdReceta,
+                guardarReceta
             }}
         >
             {props.children}

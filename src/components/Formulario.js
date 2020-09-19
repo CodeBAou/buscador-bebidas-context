@@ -2,10 +2,7 @@ import React,{useContext,useState} from 'react';
 import {CategoriasContext} from '../contexts/categoriasContext';
 import {RecetasContext} from '../contexts/RecetasContext';
 
-
 const Formulario = () => {
-
-    
 
     const [busqueda,guardarBusqueda]=useState({
         nombre:'',
@@ -31,8 +28,10 @@ const Formulario = () => {
             className="col-12 text-center"
             onSubmit={e=>{
                 e.preventDefault();
-                buscarRecetas(busqueda);
-                guardarConsultar(true);
+                if( busqueda.nombre!='' || typeof(busqueda.nombre) == 'string' && busqueda.categoria != '' || typeof(busqueda.categoria) == 'string'){
+                    buscarRecetas(busqueda);
+                    guardarConsultar(true);
+                }
             }}
         >
             <fieldset className="text-center">
