@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Formulario from './components/Formulario';
 import ListaRecetas from './components/ListaRecetas';
 import RecetasProvider from './contexts/RecetasContext';
+import ModalProvider from './contexts/modalContext';
 
 function App() {
 
@@ -11,21 +12,22 @@ function App() {
 
     <CategoriasProvider>
       <RecetasProvider>
+        <ModalProvider>
 
-        <Header/>
+          <Header/>
 
-        <div className="container w-100">
+          <div className="container w-100">
 
-          <div className="row">
-            <Formulario/>
+            <div className="row">
+              <Formulario/>
+            </div>
+
+            <ListaRecetas/>
+
           </div>
 
-          <ListaRecetas/>
-
-        </div>
-
         
-
+          </ModalProvider>
         </RecetasProvider>
     </CategoriasProvider>
   );
