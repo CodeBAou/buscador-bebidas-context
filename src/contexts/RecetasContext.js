@@ -1,6 +1,5 @@
 import React, {createContext,useState,useEffect} from 'react';
 import Axios from 'axios';
-
 export const RecetasContext = createContext();
 
 const RecetasProvider = (props) => {
